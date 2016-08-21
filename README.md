@@ -1,2 +1,17 @@
 # js-firebase-workshop
-Workshop about javascript with firebase as Backend as a Service
+Javascript with firebase as Backend as a Service workshop
+
+#### Content:
+
+* Frontend/Backend Development
+* Backend as a Service
+* Firebase
+  * Auth
+  * Security
+  * Storage
+  * Web Hosting
+  * Remote Config
+  * Test Lab
+  * Crash
+  * Notifications
+* Demo
