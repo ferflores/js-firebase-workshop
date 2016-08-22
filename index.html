@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Firebase hello world</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+</head>
+
+<body>
+  <input type="button" id="loadMessage" value="Load welcome message">
+  <input type="text" id="message">
+
+  <script>
+    var config = {
+      apiKey: "AIzaSyAWGWhi2xRvcywEu2wJ5Y6iXylQ_YBoymo",
+      authDomain: "workshop-bccd7.firebaseapp.com",
+      databaseURL: "https://workshop-bccd7.firebaseio.com",
+      storageBucket: "workshop-bccd7.appspot.com",
+    };
+
+    var app = firebase.initializeApp(config);
+
+    $('#loadMessage').on('click', function(){
+      app.database().ref().on('value', function(snapshot){
+        $('#message').val(snapshot.val().welcomeMessage);
+      })
+    });
+
+  </script>
+</body>
+</html>
