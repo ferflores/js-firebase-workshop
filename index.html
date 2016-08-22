@@ -7,6 +7,14 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
+  <style>
+    .chat {
+      max-height: 300px;
+      overflow-x: hidden;
+      overflow-y: scroll;
+    }
+  </style>
 </head>
 
 <body>
@@ -14,21 +22,43 @@
     <div class="row">
       <h1>Firebase demo</h1>
     </div>
-    <div class="row">
+    <div class="row" id="loginDiv">
+      <h3>Login</h3>
       <div class="col-sm-2">
-        <input class="btn btn-info" type="button" id="loadMessage" value="Load welcome message">
+        <input class="form-control" type="text" id="email" placeholder="Email">
+        <input class="form-control" type="text" id="password" placeholder="Password">
       </div>
       <div class="col-sm-2">
-        <input class="form-control" type="text" id="message">
+        <input class="btn btn-success" type="text" id="login" value="Login">
+      </div>
+    </div>
+
+    <hr/>
+    <div class="row">
+      <div class="col-sm-2">
+        <input class="btn btn-info" type="button" id="connect" value="Connect to chat">
       </div>
     </div>
     <hr/>
+    <div class="row chat">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>User</th>
+            <th>Message</th>
+          </tr>
+        </thead>
+        <tbody id="chatMessages">
+
+        </tbody>
+      </table>
+    </div>
     <div class="row">
       <div class="col-sm-2">
         <input class="form-control" type="text" id="newMessage">
       </div>
       <div class="col-sm-2">
-        <input class="btn btn-info" type="button" id="setNewMessage" value="Set welcome message">
+        <input class="btn btn-info" type="button" id="sendMessage" value="Set welcome message">
       </div>
     </div>
   </div>

@@ -15,3 +15,8 @@ Javascript with firebase as Backend as a Service workshop
   * Crash
   * Notifications
 * Demo
+  * Hello World
+  * Set key value
+  * Create users
+  * Auth
+  * Retrieve data
