@@ -3,30 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>Firebase hello world</title>
+  <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
 </head>
 
 <body>
-  <input type="button" id="loadMessage" value="Load welcome message">
-  <input type="text" id="message">
+  <div class="container">
+    <div class="row">
+      <h1>Firebase demo</h1>
+    </div>
+    <div class="row">
+      <div class="col-sm-2">
+        <input class="btn btn-info" type="button" id="loadMessage" value="Load welcome message">
+      </div>
+      <div class="col-sm-2">
+        <input class="form-control" type="text" id="message">
+      </div>
+    </div>
+    <hr/>
+    <div class="row">
+      <div class="col-sm-2">
+        <input class="form-control" type="text" id="newMessage">
+      </div>
+      <div class="col-sm-2">
+        <input class="btn btn-info" type="button" id="setNewMessage" value="Set welcome message">
+      </div>
+    </div>
+  </div>
 
-  <script>
-    var config = {
-      apiKey: "AIzaSyAWGWhi2xRvcywEu2wJ5Y6iXylQ_YBoymo",
-      authDomain: "workshop-bccd7.firebaseapp.com",
-      databaseURL: "https://workshop-bccd7.firebaseio.com",
-      storageBucket: "workshop-bccd7.appspot.com",
-    };
-
-    var app = firebase.initializeApp(config);
-
-    $('#loadMessage').on('click', function(){
-      app.database().ref().on('value', function(snapshot){
-        $('#message').val(snapshot.val().welcomeMessage);
-      })
-    });
-
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
