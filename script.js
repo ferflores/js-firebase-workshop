@@ -9,6 +9,12 @@ var app = firebase.initializeApp(config);
 
 var ref = app.database().ref();
 
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+   $('#createUserDiv').remove();
+  }
+});
+
 $('#loadMessage').on('click', function(){
   ref.on('value', function(snapshot){
     $('#message').val(snapshot.val().welcomeMessage);
@@ -20,3 +26,9 @@ $('#setNewMessage').on('click', function(){
     welcomeMessage: $('#newMessage').val()
   })
 });
+
+$('#createUser').on('click', function(){
+  var email = $('#email').val();
+  var password = $('#password').val();
+  app.auth().createUserWithEmailAndPassword(email, password);
+})

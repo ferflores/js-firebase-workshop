@@ -7,6 +7,7 @@
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+
 </head>
 
 <body>
@@ -14,6 +15,20 @@
     <div class="row">
       <h1>Firebase demo</h1>
     </div>
+
+    <div class="row" id="createUserDiv">
+      <h3>Create user</h3>
+      <div class="col-sm-2">
+        <input class="form-control" type="text" id="email" placeholder="Email">
+        <input class="form-control" type="text" id="password" placeholder="Password">
+      </div>
+      <div class="col-sm-2">
+        <input class="btn btn-success" type="text" id="createUser" value="Create User">
+      </div>
+    </div>
+
+    <hr/>
+
     <div class="row">
       <div class="col-sm-2">
         <input class="btn btn-info" type="button" id="loadMessage" value="Load welcome message">
